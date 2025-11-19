@@ -1,0 +1,15 @@
+---
+interface Props {
+  class?: string;
+  href: string;
+  target?: string;
+}
+---
+
+<a
+  href={Astro.props.href}
+  target={Astro.props.target}
+  class={`bg-blue-4 flex items-center gap-2 text-white px-6 py-3 rounded-4xl justify-center font-medium hover:bg-blue-5 transition-colors ${Astro.props.class ?? ""}`}
+>
+  <slot />
+</a>

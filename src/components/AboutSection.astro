@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import AboutItem from "./AboutItem.astro";
+import DataIcon from "./icons/DataIcon.svg";
+import WorkflowIcon from "./icons/WorkflowIcon.svg";
+import OpenSourceIcon from "./icons/OpenSourceIcon.svg";
+import ScreencastPlaceholder from "../images/screencast-placeholder.png";
+import { useTranslations } from "../lib.ts";
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<section
+  id="about"
+  style="background: linear-gradient(146deg, rgba(0, 0, 0, 0.20) -67.9%, rgba(255, 255, 255, 0.15) 57.04%), linear-gradient(0deg, rgba(180, 180, 180, 0.20) 0%, rgba(180, 180, 180, 0.20) 100%), linear-gradient(90deg, rgba(0, 134, 201, 0.05) 0%, rgba(0, 109, 164, 0.05) 100%), #FFF;"
+  class="rounded-t-3xl"
+>
+  <div class="container mx-auto px-4 pt-10 pb-15 items-center flex flex-col">
+    <Image
+      src={ScreencastPlaceholder}
+      alt="alma screenshot"
+      class="rounded-lg shadow-lg border w-full max-w-3xl border-slate-200 bg-white"
+    />
+    <div class="text-center space-y-4 max-w-2xl mb-6 mt-15">
+      <h1>{t("about.heading")}</h1>
+      <p>{t("about.description")}</p>
+    </div>
+    <div class="space-y-6 flex flex-col md:flex-row md:space-x-6 md:space-y-0">
+      <AboutItem
+        heading={t("about.data.heading")}
+        description={t("about.data.description")}
+      >
+        <DataIcon slot="icon" />
+      </AboutItem>
+      <AboutItem
+        heading={t("about.workflow.heading")}
+        description={t("about.workflow.description")}
+      >
+        <WorkflowIcon slot="icon" />
+      </AboutItem>
+      <AboutItem
+        heading={t("about.opensource.heading")}
+        description={t("about.opensource.description")}
+      >
+        <OpenSourceIcon slot="icon" />
+      </AboutItem>
+    </div>
+  </div>
+</section>

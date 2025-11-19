@@ -1,0 +1,65 @@
+---
+import AlmaLogo from "../components/AlmaLogo.svg";
+import CloseIcon from "../components/icons/CloseIcon.svg";
+import MenuIcon from "../components/icons/MenuIcon.svg";
+import { tw, useTranslations } from "../lib.ts";
+
+const t = useTranslations(Astro.currentLocale);
+
+function getLinkClass(active?: boolean) {
+  return tw`px-4 py-2 font-medium whitespace-nowrap rounded-full w-fit ${active ? "bg-gray-2" : ""}`;
+}
+---
+
+<!-- desktop navigation -->
+<nav class="hidden md:flex fixed top-8 left-1/2 -translate-x-1/2 space-x-5">
+  <div class="bg-white shadow rounded-4xl px-5 py-2.5 flex items-center">
+    <AlmaLogo />
+    <div class="flex border-l border-gray-3 ml-6 pl-6 space-x-2.5">
+      <a class={getLinkClass(true)} href="#about">{t("nav.about")}</a>
+      <a class={getLinkClass()} href="#features">{t("nav.features")}</a>
+      <a class={getLinkClass()} href="#community">{t("nav.community")}</a>
+      <a class={getLinkClass()} href="#contact">{t("nav.contact")}</a>
+    </div>
+  </div>
+  <div
+    class="bg-white shadow rounded-4xl px-2 py-2.5 flex items-center space-x-1"
+  >
+    <a class={getLinkClass(Astro.currentLocale === "de")} href="/de">DE</a>
+    <a class={getLinkClass(Astro.currentLocale === "fr")} href="/fr">FR</a>
+    <a class={getLinkClass(Astro.currentLocale === "it")} href="/it">IT</a>
+  </div>
+</nav>
+
+<!-- mobile navigation -->
+<nav
+  class="fixed md:hidden left-4 top-8 right-4 bg-white shadow rounded-4xl px-5 py-4"
+>
+  <input id="menustate" type="checkbox" class="peer hidden" />
+  <AlmaLogo class="peer-checked:hidden" />
+  <label
+    class="peer-checked:hidden block absolute right-5 top-4 p-1"
+    for="menustate"
+  >
+    <MenuIcon />
+  </label>
+  <label
+    for="menustate"
+    class="peer-checked:block hidden absolute right-5 top-4 p-1"
+  >
+    <CloseIcon />
+  </label>
+  <div class="peer-checked:flex hidden flex-col space-y-4 mt-6">
+    <a class={getLinkClass(true)} href="#about">{t("nav.about")}</a>
+    <a class={getLinkClass()} href="#features">{t("nav.features")}</a>
+    <a class={getLinkClass()} href="#community">{t("nav.community")}</a>
+    <a class={getLinkClass()} href="#contact">{t("nav.contact")}</a>
+  </div>
+  <div
+    class="peer-checked:flex hidden flex-col space-y-4 border-t border-gray-3 pt-4 mt-4"
+  >
+    <a class={getLinkClass(Astro.currentLocale === "de")} href="/de">DE</a>
+    <a class={getLinkClass(Astro.currentLocale === "fr")} href="/fr">FR</a>
+    <a class={getLinkClass(Astro.currentLocale === "it")} href="/it">IT</a>
+  </div>
+</nav>

@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+
+import FeatureDataImage from "../images/feature-data.png";
+import FeatureExportImage from "../images/feature-export.png";
+import FeatureGeodataImage from "../images/feature-geodata.png";
+import FeatureWorkflowImage from "../images/feature-workflow.png";
+import { useTranslations } from "../lib.ts";
+
+const t = useTranslations(Astro.currentLocale);
+
+const features = [
+  { key: "data", image: FeatureDataImage },
+  { key: "geodata", image: FeatureGeodataImage },
+  { key: "workflow", image: FeatureWorkflowImage },
+  { key: "export", image: FeatureExportImage },
+] as const;
+---
+
+<section id="features">
+  <div class="container mx-auto px-4 py-10 space-y-10">
+    <h1 class="text-center">{t("feature.heading")}</h1>
+    {
+      features.map(async ({ key, image }) => {
+        return (
+          <div class="space-y-6 md:my-16 lg:my-24 flex flex-col md:items-center md:space-x-10 md:space-y-0 md:space-x-reverse lg:space-x-reverse md:flex-row-reverse lg:space-x-20 ">
+            <Image
+              class="md:w-1/2"
+              src={image}
+              alt={t(`feature.${key}.heading`)}
+            />
+            <div class="md:w-1/2">
+              <h2>{t(`feature.${key}.heading`)}</h2>
+              <h3 class="px-3 py-1 bg-blue-1 text-blue-5 rounded-lg font-medium mt-6 mb-4">
+                {t(`feature.${key}.subheading`)}
+              </h3>
+              <ul set:html={t(`feature.${key}.list`)} />
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
