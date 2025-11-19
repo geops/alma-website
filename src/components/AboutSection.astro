@@ -1,10 +1,8 @@
 ---
-import { Image } from "astro:assets";
 import AboutItem from "./AboutItem.astro";
 import DataIcon from "./icons/DataIcon.svg";
 import WorkflowIcon from "./icons/WorkflowIcon.svg";
 import OpenSourceIcon from "./icons/OpenSourceIcon.svg";
-import ScreencastPlaceholder from "../images/screencast-placeholder.png";
 import { useTranslations } from "../lib.ts";
 
 const t = useTranslations(Astro.currentLocale);
@@ -16,11 +14,14 @@ const t = useTranslations(Astro.currentLocale);
   class="rounded-t-3xl"
 >
   <div class="container mx-auto flex flex-col items-center px-4 pt-10 pb-15">
-    <Image
-      src={ScreencastPlaceholder}
-      alt="alma screenshot"
+    <video
       class="w-full max-w-3xl rounded-lg border border-slate-200 bg-white shadow-lg"
-    />
+      autoplay
+      loop
+      muted
+      playsinline
+      src="/screencasts/about.mp4"
+      poster="/screencasts/about.png"></video>
     <div class="mt-15 mb-6 max-w-2xl space-y-4 text-center">
       <h1>{t("about.heading")}</h1>
       <p>{t("about.description")}</p>
