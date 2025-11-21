@@ -1,0 +1,18 @@
+---
+import Button from "./Button.astro";
+import { useTranslations } from "../lib.ts";
+
+const t = useTranslations(Astro.currentLocale);
+---
+
+<section id="contact" class="bg-white">
+  <div class="container mx-auto p-8">
+    <div
+      class="border-blue-2 from-blue-2/10 to-blue-3/10 flex flex-col items-center space-y-4 rounded-2xl border bg-linear-to-br p-8 text-center"
+    >
+      <h1>{t("contact.heading")}</h1>
+      <p>{t("contact.description")}</p>
+      <Button href="mailto:info@geops.ch">{t("contact.button")}</Button>
+    </div>
+  </div>
+</section>
