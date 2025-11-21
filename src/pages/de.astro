@@ -2,11 +2,15 @@
 import { Font } from "astro:assets";
 
 import AboutSection from "../components/AboutSection.astro";
+import CommunitySection from "../components/CommunitySection.astro";
 import FeatureSection from "../components/FeatureSection.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Navigation from "../components/Navigation.astro";
+import { useTranslations } from "../lib.ts";
 
 import "../tailwind.css";
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <html lang={Astro.currentLocale}>
@@ -15,12 +19,13 @@ import "../tailwind.css";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <title>alma</title>
+    <title>{t("title")}</title>
   </head>
   <body class="bg-gray-1/20 text-gray-5">
     <Navigation />
     <HeroSection />
     <AboutSection />
     <FeatureSection />
+    <CommunitySection />
   </body>
 </html>

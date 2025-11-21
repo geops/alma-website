@@ -1,0 +1,19 @@
+---
+interface Props {
+  class?: string;
+  heading: string;
+  description: string;
+}
+---
+
+<div
+  class={`border-blue-2 flex flex-col space-y-1 rounded-2xl border bg-white/40 p-6 ${Astro.props.class ?? ""}`}
+>
+  <div
+    class="bg-blue-4/10 mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-black/0 to-black/10"
+  >
+    <slot name="icon" />
+  </div>
+  <strong>{Astro.props.heading}</strong>
+  <p>{Astro.props.description}</p>
+</div>
