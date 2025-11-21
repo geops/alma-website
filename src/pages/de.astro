@@ -5,6 +5,7 @@ import AboutSection from "../components/AboutSection.astro";
 import CommunitySection from "../components/CommunitySection.astro";
 import ContactSection from "../components/ContactSection.astro";
 import FeatureSection from "../components/FeatureSection.astro";
+import Footer from "../components/Footer.astro";
 import HeroSection from "../components/HeroSection.astro";
 import Navigation from "../components/Navigation.astro";
 import { useTranslations } from "../lib.ts";
@@ -29,5 +30,6 @@ const t = useTranslations(Astro.currentLocale);
     <FeatureSection />
     <CommunitySection />
     <ContactSection />
+    <Footer />
   </body>
 </html>
