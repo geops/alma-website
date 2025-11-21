@@ -65,3 +65,45 @@ function getLinkClass(active?: boolean) {
     <a class={getLinkClass(Astro.currentLocale === "it")} href="/it">IT</a>
   </div>
 </nav>
+
+<script>
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+  function setActiveLink(sectionId: string) {
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      const linkSection = href?.slice(1);
+      if (linkSection === sectionId) {
+        link.classList.add("bg-gray-2");
+      } else {
+        link.classList.remove("bg-gray-2");
+      }
+    });
+  }
+
+  const observerCallback = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id;
+        setActiveLink(sectionId);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, {
+    rootMargin: "-50% 0px -50% 0px", // Trigger when section crosses the middle of viewport
+    threshold: 0,
+  });
+
+  // Observe all sections with IDs that match navigation links
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    const sectionId = href?.slice(1);
+    if (sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        observer.observe(section);
+      }
+    }
+  });
+</script>
