@@ -36,7 +36,6 @@ npm run build
 ├── public/          # Static assets (favicon, images, etc.)
 ├── src/
 │   ├── components/  # Reusable Astro components
-│   │   ├── AboutItem.astro
 │   │   └── Button.astro
 │   ├── fonts/       # Local font files (Satoshi)
 │   ├── images/      # Image assets
@@ -131,7 +130,6 @@ The project uses **Tailwind CSS v4** with custom configuration:
 
 - Custom colors defined in `src/tailwind.css`
 - Satoshi font family (locally hosted)
-- Responsive design utilities
 
 ### Custom Theme
 
