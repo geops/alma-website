@@ -3,14 +3,14 @@ import AlmaLogo from "./AlmaLogo.svg";
 import AlmaName from "./AlmaName.svg";
 import Background from "./Background.svg";
 import Button from "./Button.astro";
-import HeroGraphic from "./HeroGraphic.svg";
+import HeaderGraphic from "./HeaderGraphic.svg";
 import LinkIcon from "./icons/LinkIcon.svg";
 import { useTranslations } from "../lib.ts";
 
 const t = useTranslations(Astro.currentLocale);
 ---
 
-<section>
+<header>
   <Background class="absolute top-0 -left-96 -z-10 md:left-0" />
   <div
     class="container mx-auto grid grid-cols-1 items-center gap-4 px-4 md:grid-cols-2 md:gap-8 md:pb-12 lg:px-8 xl:pb-16"
@@ -20,18 +20,18 @@ const t = useTranslations(Astro.currentLocale);
         <AlmaLogo class="h-7" />
         <AlmaName class="h-7" />
       </div>
-      <h1>{t("hero.heading")}</h1>
-      <p class="md:text-xl" set:html={t("hero.description")} />
+      <h1>{t("header.heading")}</h1>
+      <p class="md:text-xl" set:html={t("header.description")} />
       <div
         class="bg-gray-2 border-blue-3 flex w-fit flex-col space-y-2.5 rounded-4xl border p-4"
       >
         <Button class="w-50" href="https://demo.alma-os.ch/" target="demo">
           <LinkIcon />
-          {t("hero.demoLink")}
+          {t("header.demoLink")}
         </Button>
-        <p class="text-xs" set:html={t("hero.demoCredentials")} />
+        <p class="text-xs" set:html={t("header.demoCredentials")} />
       </div>
     </div>
-    <HeroGraphic class="h-full w-full" />
+    <HeaderGraphic class="h-full w-full" />
   </div>
-</section>
+</header>

@@ -61,9 +61,8 @@ All translatable content is stored in `src/translations.json` using a flat struc
 ```json
 {
   "de": {
-    "nav.about": "Über alma",
-    "hero.heading": "Einfach. Sicher. Gemeinsam entwickelt.",
-    "feature.data.heading": "Zentrale Datenverwaltung"
+    "navigation.about": "Über alma",
+    "header.heading": "Einfach. Sicher. Gemeinsam entwickelt."
   }
 }
 ```
@@ -77,15 +76,15 @@ import { useTranslations } from "../lib.ts";
 const t = useTranslations(Astro.currentLocale);
 ---
 
-<h1>{t("hero.heading")}</h1>
+<h1>{t("header.heading")}</h1>
 ```
 
 ### Translation Key Convention
 
 Keys follow a hierarchical naming pattern:
 
-- `nav.*` - Navigation items
-- `hero.*` - Hero section content
+- `navigation.*` - Navigation items
+- `header.*` - Header section content
 - `about.*` - About section content
 - `feature.*` - Feature section content
   - `feature.data.*` - Data management feature
@@ -102,7 +101,7 @@ All website content can be edited in a single file: **`src/translations.json`**
 #### Editing Text Content
 
 1. Open `src/translations.json`
-2. Find the key you want to edit (e.g., `"hero.heading"`)
+2. Find the key you want to edit (e.g., `"header.heading"`)
 3. Update the text for each language (`de`, `fr`, `it`)
 4. Save the file
 
@@ -111,7 +110,7 @@ All website content can be edited in a single file: **`src/translations.json`**
 Some content includes HTML tags for formatting:
 
 ```json
-"hero.description": "alma unterstützt Behörden bei <strong>der Führung des Katasters</strong>"
+"header.description": "alma unterstützt Behörden bei <strong>der Führung des Katasters</strong>"
 "feature.data.list": "<li><strong>Item 1</strong></li><li>Item 2</li>"
 ```
 
