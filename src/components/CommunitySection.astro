@@ -30,8 +30,6 @@ const partners = [
   "FL", // Fürstentum Liechtenstein
 ] as const;
 
-const partnersNationwide = ["BAV", "BAZL"];
-
 const t = useTranslations(Astro.currentLocale);
 ---
 
@@ -101,14 +99,7 @@ const t = useTranslations(Astro.currentLocale);
               src={PartnerImage}
               alt={t(`community.partner.${partner}`)}
             />
-            <div class="flex flex-col gap-1">
-              {t(`community.partner.${partner}`)}
-              {partnersNationwide.includes(partner) ? (
-                <div class="text-gray-4 bg-gray-2 w-fit rounded-full px-2 py-0.5 text-sm">
-                  {t(`community.partnerNationwide`)}
-                </div>
-              ) : null}
-            </div>
+            {t(`community.partner.${partner}`)}
           </div>
         ))
       }
