@@ -13,7 +13,9 @@ const t = useTranslations(Astro.currentLocale);
   style="background: linear-gradient(146deg, rgba(0, 0, 0, 0.20) -67.9%, rgba(255, 255, 255, 0.15) 57.04%), linear-gradient(0deg, rgba(180, 180, 180, 0.20) 0%, rgba(180, 180, 180, 0.20) 100%), linear-gradient(90deg, rgba(0, 134, 201, 0.05) 0%, rgba(0, 109, 164, 0.05) 100%), #FFF;"
   class="rounded-t-3xl"
 >
-  <div class="container mx-auto flex flex-col items-center px-4 pt-10 pb-15">
+  <div
+    class="container mx-auto flex flex-col items-center px-4 pt-10 pb-15 lg:px-8"
+  >
     <video
       class="w-full max-w-3xl rounded-lg border border-slate-200 bg-white shadow-lg"
       autoplay
@@ -22,9 +24,9 @@ const t = useTranslations(Astro.currentLocale);
       playsinline
       src="/screencasts/about.mp4"
       poster="/screencasts/about.png"></video>
-    <div class="mt-15 mb-6 max-w-2xl space-y-4 text-center">
+    <div class="mt-15 mb-6 max-w-2xl space-y-4 text-center md:mb-8">
       <h1>{t("about.heading")}</h1>
-      <p set:html={t("about.description")} />
+      <p class="md:text-xl" set:html={t("about.description")} />
     </div>
     <div class="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-6">
       <Box

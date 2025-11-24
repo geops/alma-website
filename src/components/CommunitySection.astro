@@ -35,11 +35,11 @@ const t = useTranslations(Astro.currentLocale);
 
 <section id="community" class="bg-white">
   <div
-    class="container mx-auto flex flex-col items-center space-y-10 px-4 py-10"
+    class="container mx-auto flex flex-col items-center space-y-10 px-4 py-10 lg:px-8"
   >
-    <div class="mt-15 mb-6 max-w-2xl space-y-4 text-center">
+    <div class="mt-15 mb-6 max-w-2xl space-y-4 text-center md:mb-8">
       <h1 class="text-center">{t("community.heading")}</h1>
-      <p set:html={t("community.description")} />
+      <p class="md:text-xl" set:html={t("community.description")} />
     </div>
     <div class="relative py-16 md:py-24">
       <svg
@@ -86,14 +86,14 @@ const t = useTranslations(Astro.currentLocale);
         </div>
       </div>
     </div>
-    <div class="mt-15 mb-6 max-w-2xl space-y-4 text-center">
+    <div class="mt-15 mb-6 max-w-2xl space-y-4 text-center md:mb-8">
       <h1 class="text-center">{t("community.partnerHeading")}</h1>
-      <p set:html={t("community.partnerDescription")} />
+      <p class="md:text-xl" set:html={t("community.partnerDescription")} />
     </div>
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         partners.map((partner) => (
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-3 text-sm">
             <Image
               width={30}
               src={PartnerImage}

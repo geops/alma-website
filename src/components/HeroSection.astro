@@ -11,17 +11,15 @@ const t = useTranslations(Astro.currentLocale);
 
 <section>
   <div
-    class="container mx-auto grid grid-cols-1 items-center md:grid-cols-2 md:pb-10"
+    class="container mx-auto grid grid-cols-1 items-center gap-4 px-4 md:grid-cols-2 md:gap-8 md:pb-12 lg:px-8 xl:pb-16"
   >
-    <div class="space-y-5 px-4 pt-32">
-      <div
-        class="border-gray-1 flex w-fit items-center gap-2 rounded-lg border p-2.5"
-      >
-        <AlmaLogo />
-        <AlmaName />
+    <div class="max-w-sm space-y-5 pt-32 md:max-w-md md:pt-40 xl:pt-48">
+      <div class="flex items-center gap-1">
+        <AlmaLogo class="h-7" />
+        <AlmaName class="h-7" />
       </div>
       <h1>{t("hero.heading")}</h1>
-      <p set:html={t("hero.description")} />
+      <p class="md:text-xl" set:html={t("hero.description")} />
       <div
         class="bg-gray-2 border-blue-3 flex w-fit flex-col space-y-2.5 rounded-4xl border p-4"
       >
@@ -29,9 +27,9 @@ const t = useTranslations(Astro.currentLocale);
           <LinkIcon />
           {t("hero.demoLink")}
         </Button>
-        <Fragment set:html={t("hero.demoCredentials")} />
+        <p class="text-xs" set:html={t("hero.demoCredentials")} />
       </div>
     </div>
-    <HeroGraphic class="w-full" />
+    <HeroGraphic class="h-full w-full" />
   </div>
 </section>

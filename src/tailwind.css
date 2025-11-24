@@ -20,11 +20,11 @@
 
 @layer base {
   h1 {
-    @apply text-3xl leading-10 font-bold;
+    @apply text-3xl leading-10 font-bold tracking-wide md:text-4xl;
   }
 
   h2 {
-    @apply text-xl font-bold;
+    @apply text-xl font-bold md:text-2xl;
   }
 
   ul {

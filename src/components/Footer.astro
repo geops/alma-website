@@ -8,7 +8,7 @@ const t = useTranslations(Astro.currentLocale);
 
 <footer>
   <div
-    class="container mx-auto flex flex-col items-center space-y-8 px-8 py-16 text-center"
+    class="container mx-auto flex max-w-2xl flex-col items-center space-y-8 px-4 py-16 text-center lg:px-8"
   >
     <div
       class="border-gray-1 relative mx-auto mt-8 flex w-fit items-center gap-2 rounded-lg border p-2"
@@ -49,7 +49,7 @@ const t = useTranslations(Astro.currentLocale);
     <p set:html={t("footer.description")} />
   </div>
   <div class="border-gray-3 text-gray-4 border-t">
-    <div class="container mx-auto space-y-8 px-4 py-8 text-sm">
+    <div class="container mx-auto space-y-8 px-4 py-8 text-sm lg:px-8">
       <div class="flex items-center gap-2">
         <AlmaLogo />
         <AlmaName />
