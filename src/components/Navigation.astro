@@ -68,6 +68,16 @@ function getLinkClass(active?: boolean) {
 
 <script>
   const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const menuCheckbox = document.getElementById("menustate") as HTMLInputElement;
+
+  // Close mobile menu when clicking on anchor links
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (menuCheckbox) {
+        menuCheckbox.checked = false;
+      }
+    });
+  });
 
   function setActiveLink(sectionId: string) {
     navLinks.forEach((link) => {
