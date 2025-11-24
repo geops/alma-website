@@ -1,5 +1,6 @@
 ---
 import AlmaLogo from "../components/AlmaLogo.svg";
+import ChevronIcon from "../components/icons/ChevronIcon.svg";
 import CloseIcon from "../components/icons/CloseIcon.svg";
 import MenuIcon from "../components/icons/MenuIcon.svg";
 import { tw, useTranslations } from "../lib.ts";
@@ -13,11 +14,13 @@ function getLinkClass(active?: boolean) {
 
 <!-- desktop navigation -->
 <nav
-  class="fixed top-8 left-1/2 z-20 hidden -translate-x-1/2 space-x-5 md:flex"
+  class="fixed top-8 left-1/2 z-20 hidden -translate-x-1/2 items-start space-x-5 md:flex"
 >
-  <div class="flex items-center rounded-4xl bg-white px-5 py-2.5 shadow">
-    <AlmaLogo />
-    <div class="border-gray-3 ml-6 flex space-x-2.5 border-l pl-6">
+  <div
+    class="flex items-center rounded-4xl bg-white/70 p-2.5 pl-5 shadow-lg backdrop-blur"
+  >
+    <a href="#top"><AlmaLogo /></a>
+    <div class="border-gray-3 ml-4 flex space-x-2.5 border-l pl-4">
       <a class={getLinkClass(true)} href="#about">{t("nav.about")}</a>
       <a class={getLinkClass()} href="#features">{t("nav.features")}</a>
       <a class={getLinkClass()} href="#community">{t("nav.community")}</a>
@@ -25,11 +28,23 @@ function getLinkClass(active?: boolean) {
     </div>
   </div>
   <div
-    class="flex items-center space-x-1 rounded-4xl bg-white px-2 py-2.5 shadow"
+    class="relative rounded-4xl bg-white/70 p-2.5 pr-5 shadow-lg backdrop-blur"
   >
-    <a class={getLinkClass(Astro.currentLocale === "de")} href="/de">DE</a>
-    <a class={getLinkClass(Astro.currentLocale === "fr")} href="/fr">FR</a>
-    <a class={getLinkClass(Astro.currentLocale === "it")} href="/it">IT</a>
+    <input id="langstate" type="checkbox" class="peer hidden" />
+    <div class="min-w-14 px-4 py-2 font-medium">
+      {Astro.currentLocale?.toUpperCase()}
+    </div>
+    <label
+      for="langstate"
+      class="absolute top-5 right-2 cursor-pointer pl-8 peer-checked:rotate-180 peer-checked:pr-8 peer-checked:pl-0"
+    >
+      <ChevronIcon />
+    </label>
+    <div class="col-span-2 mt-2 hidden flex-col space-y-2 peer-checked:flex">
+      <a class={getLinkClass(Astro.currentLocale === "de")} href="/de">DE</a>
+      <a class={getLinkClass(Astro.currentLocale === "fr")} href="/fr">FR</a>
+      <a class={getLinkClass(Astro.currentLocale === "it")} href="/it">IT</a>
+    </div>
   </div>
 </nav>
 
@@ -38,7 +53,7 @@ function getLinkClass(active?: boolean) {
   class="fixed top-8 right-4 left-4 z-20 rounded-4xl bg-white px-5 py-4 shadow md:hidden"
 >
   <input id="menustate" type="checkbox" class="peer hidden" />
-  <AlmaLogo class="peer-checked:hidden" />
+  <a href="#top"><AlmaLogo class="peer-checked:hidden" /></a>
   <label
     class="absolute top-4 right-5 block p-1 peer-checked:hidden"
     for="menustate"
