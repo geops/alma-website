@@ -1,12 +1,14 @@
 ---
 import AlmaLogo from "./AlmaLogo.svg";
 import AlmaName from "./AlmaName.svg";
+import Background from "./Background.svg";
 import { useTranslations } from "../lib.ts";
 
 const t = useTranslations(Astro.currentLocale);
 ---
 
-<footer>
+<footer class="relative overflow-hidden">
+  <Background class="absolute right-0 -bottom-80 -z-10 rotate-180" />
   <div
     class="container mx-auto flex max-w-2xl flex-col items-center space-y-8 px-4 py-16 text-center lg:px-8"
   >

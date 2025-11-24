@@ -1,6 +1,7 @@
 ---
 import AlmaLogo from "./AlmaLogo.svg";
 import AlmaName from "./AlmaName.svg";
+import Background from "./Background.svg";
 import Button from "./Button.astro";
 import HeroGraphic from "./HeroGraphic.svg";
 import LinkIcon from "./icons/LinkIcon.svg";
@@ -10,6 +11,7 @@ const t = useTranslations(Astro.currentLocale);
 ---
 
 <section>
+  <Background class="absolute top-0 -left-96 -z-10 md:left-0" />
   <div
     class="container mx-auto grid grid-cols-1 items-center gap-4 px-4 md:grid-cols-2 md:gap-8 md:pb-12 lg:px-8 xl:pb-16"
   >
