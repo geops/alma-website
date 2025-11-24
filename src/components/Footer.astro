@@ -54,7 +54,7 @@ const t = useTranslations(Astro.currentLocale);
         <AlmaLogo />
         <AlmaName />
       </div>
-      <p>{t("footer")}</p>
+      <p set:html={t("footer")} />
     </div>
   </div>
 </footer>

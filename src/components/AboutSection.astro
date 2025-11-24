@@ -24,7 +24,7 @@ const t = useTranslations(Astro.currentLocale);
       poster="/screencasts/about.png"></video>
     <div class="mt-15 mb-6 max-w-2xl space-y-4 text-center">
       <h1>{t("about.heading")}</h1>
-      <p>{t("about.description")}</p>
+      <p set:html={t("about.description")} />
     </div>
     <div class="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-6">
       <Box
