@@ -36,9 +36,11 @@ npm run build
 ├── public/          # Static assets (favicon, images, etc.)
 ├── src/
 │   ├── components/  # Reusable Astro components
+│   │   ├── graphics/      # Vector graphics used in components
+│   │   ├── icons/         # Vector icons used in components
+│   │   ├── images/        # Raster images used in components
 │   │   └── Button.astro
 │   ├── fonts/       # Local font files (Satoshi)
-│   ├── images/      # Image assets
 │   ├── pages/       # Page routes
 │   │   ├── index.astro    # Default page (redirects to /de)
 │   │   ├── de.astro       # German version
