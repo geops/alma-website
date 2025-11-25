@@ -7,7 +7,7 @@
     "about.workflow.heading": "Effiziente, transparente Arbeitsprozesse",
     "about.workflow.description": "Strukturierte Geschäftsabläufe mit klaren Zuständigkeiten und automatisierten Workflows.",
     "about.opensource.heading": "Kosteneffizient durch gemeinsame Entwicklung",
-    "about.opensource.description": "Open Source Modell reduziert Kosten durch gemeinschaftliche Finanzierung.",
+    "about.opensource.description": "Open-Source-Modell reduziert Kosten durch gemeinschaftliche Finanzierung.",
     "community.boxLeft.heading": "15+",
     "community.boxLeft.description": "Partner",
     "community.boxRight.heading": "100 000 +",
@@ -52,9 +52,9 @@
     "feature.export.heading": "Automatisierte Reports & Schnittstellen",
     "feature.export.subheading": "Von der Datenerfassung bis zur Publikation – alles aus einer Quelle.",
     "feature.export.list": "<li><strong>Berichte und Statistiken</strong> per Knopfdruck erstellen</li><li><strong>Export von Daten</strong> als PDF, Word oder Excel</li><li><strong>MGDM- und ÖREB-konforme</strong> Interlis-Datenexporte</li><li><strong>Übergabe an GIS-Systeme und Geoportale</strong> für Publikation im öffentlichen KbS</li>",
-    "footer": "© <cite>alma</cite> – Open Source Software für den Kataster belasteter Standorte",
+    "footer": "© <cite>alma</cite> – Open-Source-Software für den Kataster belasteter Standorte",
     "footer.title": "Wer wir sind",
-    "footer.description": "<cite>alma</cite> ist ein gemeinschaftlich entwickeltes Open Source Projekt, koordiniert von der <strong>geOps AG</strong> in Olten. Seit über zwanzig Jahren entwickelt geOps Softwarelösungen für Geodaten, Mobilität und Umwelt. <cite>alma</cite> ist nur eines der Open Source Projekte, mit dem wir die Strategie einer nachhaltigen, digitalen Verwaltung unterstützen.",
+    "footer.description": "<cite>alma</cite> ist ein gemeinschaftlich entwickeltes Open-Source-Projekt, koordiniert von der <strong>geOps AG</strong> in Olten. Seit über zwanzig Jahren entwickelt geOps Softwarelösungen für Geodaten, Mobilität und Umwelt. <cite>alma</cite> ist nur eines der Open-Source-Projekte, mit dem wir die Strategie einer nachhaltigen, digitalen Verwaltung unterstützen.",
     "header.heading": "Einfach. Sicher. Gemeinsam entwickelt.",
     "header.description": "<cite>alma</cite> unterstützt Behörden bei <strong>der Führung des Katasters belasteter Standorte</strong> – von der Datenerfassung bis zur Publikation im Geoportal.",
     "header.demoLink": "Zur Demo",
@@ -63,7 +63,7 @@
     "navigation.features": "Funktionen",
     "navigation.community": "Community",
     "navigation.contact": "Kontakt",
-    "title": "alma - Open Source Software für den Kataster belasteter Standorte"
+    "title": "alma - Open-Source-Software für den Kataster belasteter Standorte"
   },
   "fr": {
     "about.heading": "À propos d'alma",
