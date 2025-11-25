@@ -1,13 +1,27 @@
-<script>
-  import { i18n } from "astro:config/client";
+---
+import Layout from "../components/Layout.astro";
+---
 
-  const browserLanguage = navigator.language.split("-")[0];
+<Layout>
+  <div
+    class="mx-auto mt-8 flex w-fit space-x-8 rounded-full bg-white px-8 py-4 font-medium shadow-lg"
+  >
+    <a href="/de">Deutsch</a>
+    <a href="/fr">Français</a>
+    <a href="/it">Italiano</a>
+  </div>
 
-  if (i18n?.locales.includes(browserLanguage)) {
-    // Redirect to preferred browser language if available
-    window.location.href = `/${browserLanguage}`;
-  } else {
-    // Fallback to default locale
-    window.location.href = `/${i18n?.defaultLocale}`;
-  }
-</script>
+  <script>
+    import { i18n } from "astro:config/client";
+
+    const browserLanguage = navigator.language.split("-")[0];
+
+    if (i18n?.locales.includes(browserLanguage)) {
+      // Redirect to preferred browser language if available
+      window.location.href = `/${browserLanguage}`;
+    } else {
+      // Fallback to default locale
+      window.location.href = `/${i18n?.defaultLocale}`;
+    }
+  </script>
+</Layout>

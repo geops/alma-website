@@ -1,13 +1,6 @@
 ---
 import { Font } from "astro:assets";
 
-import AboutSection from "../components/AboutSection.astro";
-import CommunitySection from "../components/CommunitySection.astro";
-import ContactSection from "../components/ContactSection.astro";
-import FeatureSection from "../components/FeatureSection.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import Navigation from "../components/Navigation.astro";
 import { useTranslations } from "../lib.ts";
 
 import "../tailwind.css";
@@ -24,12 +17,6 @@ const t = useTranslations(Astro.currentLocale);
     <title>{t("title")}</title>
   </head>
   <body class="bg-gray-1/20 text-gray-5 text-base md:text-lg">
-    <Navigation />
-    <Header />
-    <AboutSection />
-    <FeatureSection />
-    <CommunitySection />
-    <ContactSection />
-    <Footer />
+    <slot />
   </body>
 </html>
