@@ -43,7 +43,7 @@ npm run build
 │   ├── fonts/       # Local font files (Satoshi)
 │   ├── pages/       # Page routes
 │   │   ├── [locale].astro # Localized version
-│   │   ├── index.astro    # Default page (redirects to browser or default locale)
+│   │   └── index.astro    # Default page (redirects to browser or default locale)
 │   ├── lib.ts       # Utility functions (i18n, etc.)
 │   ├── tailwind.css # Tailwind CSS configuration
 │   └── translations.json  # All translatable content
