@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
+
 import Button from "./Button.astro";
 import AlmaLogo from "./graphics/AlmaLogo.svg";
 import AlmaName from "./graphics/AlmaName.svg";
 import Background from "./graphics/Background.svg";
-import HeaderGraphic from "./graphics/HeaderGraphic.svg";
 import LinkIcon from "./icons/LinkIcon.svg";
+import HeaderImage from "./images/header.png";
 import { useTranslations } from "../lib.ts";
 
 const t = useTranslations(Astro.currentLocale);
@@ -32,6 +34,6 @@ const t = useTranslations(Astro.currentLocale);
         <p class="text-xs" set:html={t("header.demoCredentials")} />
       </div>
     </div>
-    <HeaderGraphic class="h-full w-full" />
+    <Image class="w-full" src={HeaderImage} alt={t("header.heading")} />
   </div>
 </header>
