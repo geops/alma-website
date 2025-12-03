@@ -32,12 +32,12 @@ function getLinkClass(active?: boolean) {
     class="relative rounded-4xl bg-white/70 p-2.5 pr-5 shadow backdrop-blur"
   >
     <input id="langstate" type="checkbox" class="peer hidden" />
-    <div class="min-w-14 px-4 py-2 font-medium">
+    <div class="min-w-14 pl-4 pr-6 py-2 font-medium">
       {Astro.currentLocale?.toUpperCase()}
     </div>
     <label
       for="langstate"
-      class="absolute top-5 right-2 cursor-pointer pl-8 peer-checked:rotate-180 peer-checked:pr-8 peer-checked:pl-0"
+      class="absolute top-5 right-4 cursor-pointer pl-8 peer-checked:rotate-180 peer-checked:pr-8 peer-checked:pl-0"
     >
       <ChevronIcon />
     </label>
