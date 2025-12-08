@@ -1,6 +1,6 @@
 # alma Website
 
-Official website for **alma** – the modern, web-based solution for managing contaminated sites (Kataster belasteter Standorte).
+Official website for **alma** – the modern, web-based solution for managing polluted sites (Kataster belasteter Standorte).
 
 ## 🚀 Quick Start
 
