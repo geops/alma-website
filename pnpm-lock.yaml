@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      "@plausible-analytics/tracker":
+        specifier: ^0.4.4
+        version: 0.4.4
       "@prettier/plugin-xml":
         specifier: ^3.4.2
         version: 3.4.2(prettier@3.7.4)
@@ -588,6 +591,12 @@ packages:
     resolution:
       {
         integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==,
+      }
+
+  "@plausible-analytics/tracker@0.4.4":
+    resolution:
+      {
+        integrity: sha512-fz0NOYUEYXtg1TBaPEEvtcBq3FfmLFuTe1VZw4M8sTWX129br5dguu3M15+plOQnc181ShYe67RfwhKgK89VnA==,
       }
 
   "@prettier/plugin-xml@3.4.2":
@@ -3280,6 +3289,8 @@ snapshots:
       "@jridgewell/sourcemap-codec": 1.5.5
 
   "@oslojs/encoding@1.1.0": {}
+
+  "@plausible-analytics/tracker@0.4.4": {}
 
   "@prettier/plugin-xml@3.4.2(prettier@3.7.4)":
     dependencies:

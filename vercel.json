@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/p7e/api/event",
+      "destination": "https://plausible.geops.io/api/event"
+    }
+  ]
+}

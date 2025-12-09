@@ -20,3 +20,12 @@ const t = useTranslations(Astro.currentLocale);
     <slot />
   </body>
 </html>
+
+<script>
+  import { init } from "@plausible-analytics/tracker";
+
+  init({
+    domain: "alma-os.ch",
+    endpoint: "/p7e/api/event",
+  });
+</script>
