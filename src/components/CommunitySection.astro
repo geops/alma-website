@@ -2,9 +2,11 @@
 import { Image } from "astro:assets";
 
 import Box from "./Box.astro";
+import Button from "./Button.astro";
 import AlmaLogo from "./graphics/AlmaLogo.svg";
 import CommunityMap from "./graphics/CommunityMap.svg";
 import DataIcon from "./icons/DataIcon.svg";
+import DownloadIcon from "./icons/DownloadIcon.svg";
 import LocationIcon from "./icons/LocationIcon.svg";
 import PartnerIcon from "./icons/PartnerIcon.svg";
 import PartnerImage from "./images/community-partner.png";
@@ -75,6 +77,13 @@ const t = useTranslations(Astro.currentLocale);
         </div>
       </div>
     </div>
+    <Button
+      outline
+      href={`alma-flyer-${Astro.currentLocale}.pdf`}
+      target="flyer"
+    >
+      <DownloadIcon />{t("community.downloadFlyer")}
+    </Button>
     <div class="mt-15 mb-6 max-w-2xl space-y-4 text-center md:mb-8">
       <h1 class="text-center">{t("community.partnerHeading")}</h1>
       <p class="md:text-xl" set:html={t("community.partnerDescription")} />
