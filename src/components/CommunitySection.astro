@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 import Box from "./Box.astro";
 import Button from "./Button.astro";
 import AlmaLogo from "./graphics/AlmaLogo.svg";
@@ -9,28 +7,44 @@ import DataIcon from "./icons/DataIcon.svg";
 import DownloadIcon from "./icons/DownloadIcon.svg";
 import LocationIcon from "./icons/LocationIcon.svg";
 import PartnerIcon from "./icons/PartnerIcon.svg";
-import PartnerImage from "./images/community-partner.png";
+import PartnerCH from "./partners/ch.svg";
+import PartnerBE from "./partners/be.svg";
+import PartnerBS from "./partners/bs.svg";
+import PartnerBL from "./partners/bl.svg";
+import PartnerFR from "./partners/fr.svg";
+import PartnerLU from "./partners/lu.svg";
+import PartnerUR from "./partners/ur.svg";
+import PartnerTG from "./partners/tg.svg";
+import PartnerZG from "./partners/zg.svg";
+import PartnerSZ from "./partners/sz.svg";
+import PartnerSO from "./partners/so.svg";
+import PartnerVS from "./partners/vs.svg";
+import PartnerGR from "./partners/gr.svg";
+import PartnerVD from "./partners/vd.svg";
+import PartnerNE from "./partners/ne.svg";
+import PartnerAG from "./partners/ag.svg";
+import PartnerFL from "./partners/fl.svg";
 import { useTranslations } from "../lib.ts";
 
 const partners = [
-  "BAV", // Bundesamt für Verkehr
-  "BAZL", // Bundesamt für Zivilluftfahrt
-  "BE", // Bern
-  "BL", // Basel-Landschaft
-  "BS", // Basel-Stadt
-  "FR", // Fribourg
-  "LU", // Luzern
-  "UR", // Uri
-  "TG", // Thurgau
-  "ZG", // Zug
-  "SZ", // Schwyz
-  "SO", // Solothurn
-  "VS", // Wallis
-  "GR", // Graubünden
-  "VD", // Waadt (Vaud)
-  "NE", // Neuchâtel
-  "AG", // Aargau
-  "FL", // Fürstentum Liechtenstein
+  ["BAV", PartnerCH], // Bundesamt für Verkehr
+  ["BAZL", PartnerCH], // Bundesamt für Zivilluftfahrt
+  ["BE", PartnerBE], // Bern
+  ["BL", PartnerBL], // Basel-Landschaft
+  ["BS", PartnerBS], // Basel-Stadt
+  ["FR", PartnerFR], // Fribourg
+  ["LU", PartnerLU], // Luzern
+  ["UR", PartnerUR], // Uri
+  ["TG", PartnerTG], // Thurgau
+  ["ZG", PartnerZG], // Zug
+  ["SZ", PartnerSZ], // Schwyz
+  ["SO", PartnerSO], // Solothurn
+  ["VS", PartnerVS], // Wallis
+  ["GR", PartnerGR], // Graubünden
+  ["VD", PartnerVD], // Waadt (Vaud)
+  ["NE", PartnerNE], // Neuchâtel
+  ["AG", PartnerAG], // Aargau
+  ["FL", PartnerFL], // Fürstentum Liechtenstein
 ] as const;
 
 const t = useTranslations(Astro.currentLocale);
@@ -61,7 +75,7 @@ const t = useTranslations(Astro.currentLocale);
         <PartnerIcon slot="icon" />
       </Box>
       <Box
-        class="absolute top-3/5 left-1/2 translate-x-8 backdrop-blur-xs sm:translate-x-16 md:translate-x-24"
+        class="absolute top-3/5 left-1/2 translate-x-6 backdrop-blur-xs sm:translate-x-16 md:translate-x-24"
         heading={t("community.boxRight.heading")}
         description={t("community.boxRight.description")}
       >
@@ -88,16 +102,14 @@ const t = useTranslations(Astro.currentLocale);
       <h1 class="text-center">{t("community.partnerHeading")}</h1>
       <p class="md:text-xl" set:html={t("community.partnerDescription")} />
     </div>
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div
+      class="grid grid-cols-2 gap-x-3 gap-y-2 text-xs md:grid-cols-3 md:gap-x-4 md:text-base"
+    >
       {
-        partners.map((partner) => (
-          <div class="flex items-center gap-3 text-sm">
-            <Image
-              width={30}
-              src={PartnerImage}
-              alt={t(`community.partner.${partner}`)}
-            />
-            {t(`community.partner.${partner}`)}
+        partners.map(([key, PartnerImage]) => (
+          <div class="border-blue-1 flex items-center gap-1 rounded-lg border p-1 md:gap-2 md:px-4 md:py-2">
+            <PartnerImage class="m-1 h-5 w-4 shrink-0 md:ml-0 md:h-8 md:w-8" />
+            {t(`community.partner.${key}`)}
           </div>
         ))
       }
