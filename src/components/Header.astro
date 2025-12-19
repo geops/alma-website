@@ -31,7 +31,7 @@ const t = useTranslations(Astro.currentLocale);
           <LinkIcon />
           {t("header.demoLink")}
         </Button>
-        <p class="text-xs" set:html={t("header.demoCredentials")} />
+        <p class="text-sm" set:html={t("header.demoCredentials")} />
       </div>
     </div>
     <Image class="w-full" src={HeaderImage} alt={t("header.heading")} />
