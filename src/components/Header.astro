@@ -24,14 +24,22 @@ const t = useTranslations(Astro.currentLocale);
       </div>
       <h1>{t("header.heading")}</h1>
       <p class="md:text-xl" set:html={t("header.description")} />
-      <div
-        class="bg-gray-2 border-blue-3 flex w-fit flex-col space-y-2.5 rounded-4xl border p-4"
+      <Button
+        class="hidden w-50 lg:flex"
+        href="https://demo.alma-os.ch/auth/realms/alma/protocol/openid-connect/auth?response_type=code&client_id=alma-backend&redirect_uri=https%3A%2F%2Fdemo.alma-os.ch%2Fapi%2Fauth%2Fcallback%2F&username=test@alma-os.ch&password=demo2024"
+        target="demo"
       >
-        <Button class="w-50" href="https://demo.alma-os.ch/" target="demo">
+        <LinkIcon />
+        {t("header.demoLink")}
+      </Button>
+      <div
+        class="flex w-60 flex-col space-y-2.5 rounded-4xl border border-gray-400 bg-gray-100 p-4 lg:hidden"
+      >
+        <Button disabled href="#" target="demo">
           <LinkIcon />
           {t("header.demoLink")}
         </Button>
-        <p class="text-sm" set:html={t("header.demoCredentials")} />
+        <p class="text-sm" set:html={t("header.demoHintDesktop")} />
       </div>
     </div>
     <Image class="w-full" src={HeaderImage} alt={t("header.heading")} />
