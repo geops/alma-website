@@ -8,7 +8,7 @@ import { tw, useTranslations } from "../lib.ts";
 const t = useTranslations(Astro.currentLocale);
 
 function getLinkClass(active?: boolean) {
-  return tw`w-fit rounded-full px-4 py-2 font-medium whitespace-nowrap ${active ? "bg-gray-2" : ""}`;
+  return tw`w-fit rounded-full px-4 py-2 font-medium whitespace-nowrap ${active ? "bg-gray-400" : ""}`;
 }
 ---
 
@@ -20,7 +20,7 @@ function getLinkClass(active?: boolean) {
     class="flex items-center rounded-4xl bg-white/70 p-2.5 pl-5 shadow backdrop-blur"
   >
     <a href="#top"><AlmaLogo /></a>
-    <div class="border-gray-3 ml-4 flex space-x-2.5 border-l pl-4">
+    <div class="ml-4 flex space-x-2.5 border-l border-gray-400 pl-4">
       <a class={getLinkClass(true)} href="#about">{t("navigation.about")}</a>
       <a class={getLinkClass()} href="#features">{t("navigation.features")}</a>
       <a class={getLinkClass()} href="#community">{t("navigation.community")}</a
@@ -72,7 +72,7 @@ function getLinkClass(active?: boolean) {
     <a class={getLinkClass()} href="#contact">{t("navigation.contact")}</a>
   </div>
   <div
-    class="border-gray-3 mt-4 hidden flex-col space-y-4 border-t pt-4 peer-checked:flex"
+    class="mt-4 hidden flex-col space-y-4 border-t border-gray-400 pt-4 peer-checked:flex"
   >
     <a class={getLinkClass(Astro.currentLocale === "de")} href="/de">DE</a>
     <a class={getLinkClass(Astro.currentLocale === "fr")} href="/fr">FR</a>
@@ -98,9 +98,9 @@ function getLinkClass(active?: boolean) {
       const href = link.getAttribute("href");
       const linkSection = href?.slice(1);
       if (linkSection === sectionId) {
-        link.classList.add("bg-gray-2");
+        link.classList.add("bg-gray-400");
       } else {
-        link.classList.remove("bg-gray-2");
+        link.classList.remove("bg-gray-400");
       }
     });
   }

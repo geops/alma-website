@@ -134,7 +134,7 @@ The project uses **Tailwind CSS v4** with custom configuration:
 
 ```css
 @theme {
-  --color-gray-1: #d9d9d9;
+  --color-gray-500: #d0d5dd;
   /* Add more custom colors here */
 }
 ```

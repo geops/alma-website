@@ -7,10 +7,10 @@ interface Props {
 ---
 
 <div
-  class={`border-blue-2 flex flex-col space-y-1 rounded-2xl border bg-white/40 p-6 ${Astro.props.class ?? ""}`}
+  class={`border-blue-300 flex flex-col space-y-1 rounded-2xl border bg-white/40 p-6 ${Astro.props.class ?? ""}`}
 >
   <div
-    class="bg-blue-4/10 mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-linear-to-br from-black/0 to-black/10"
+    class="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600/10 bg-linear-to-br from-black/0 to-black/10"
   >
     <slot name="icon" />
   </div>
