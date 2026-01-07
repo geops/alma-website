@@ -42,6 +42,10 @@ const t = useTranslations(Astro.currentLocale);
         <p class="text-sm" set:html={t("header.demoHintDesktop")} />
       </div>
     </div>
-    <Image class="w-full" src={HeaderImage} alt={t("header.heading")} />
+    <Image
+      class="w-full md:pt-32"
+      src={HeaderImage}
+      alt={t("header.heading")}
+    />
   </div>
 </header>
