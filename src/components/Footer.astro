@@ -2,7 +2,6 @@
 import AlmaLogo from "./graphics/AlmaLogo.svg";
 import AlmaName from "./graphics/AlmaName.svg";
 import Background from "./graphics/Background.svg";
-import GeopsLogo from "./graphics/GeopsLogo.svg";
 import { useTranslations } from "../lib.ts";
 
 const t = useTranslations(Astro.currentLocale);
@@ -13,27 +12,16 @@ const t = useTranslations(Astro.currentLocale);
   <div
     class="container mx-auto flex max-w-2xl flex-col items-center space-y-8 px-4 py-16 text-center lg:px-8"
   >
-    <div
-      class="relative mx-auto mt-8 flex w-fit items-center gap-2 rounded-lg border border-gray-500 p-2"
-    >
-      <div
-        class="absolute -top-8 -right-12 rotate-12 rounded-md bg-black px-4 py-1"
-      >
-        <GeopsLogo class="h-8 w-16" />
-      </div>
-      <AlmaLogo />
-      <AlmaName />
-    </div>
     <h1>{t("footer.title")}</h1>
     <p set:html={t("footer.description")} />
   </div>
   <div class="border-t border-gray-400 text-gray-600">
     <div class="container mx-auto space-y-4 px-4 py-8 text-sm lg:px-8">
       <div class="flex items-center gap-1">
-        <AlmaLogo class="w-5" />
-        <AlmaName class="w-10" />
+        <AlmaLogo class="w-5 shrink-0" />
+        <AlmaName class="mr-1 w-10 shrink-0" />
+        <p set:html={t("footer")} />
       </div>
-      <p set:html={t("footer")} />
     </div>
   </div>
 </footer>
