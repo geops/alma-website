@@ -48,15 +48,9 @@ function getLinkClass(active?: boolean) {
 </nav>
 
 <!-- mobile navigation -->
-<nav
-  class="fixed top-8 right-4 left-4 z-20 rounded-4xl bg-white px-5 py-4 shadow md:hidden"
->
+<nav class="fixed top-8 right-4 z-20 rounded-4xl bg-white p-4 shadow md:hidden">
   <input id="menustate" type="checkbox" class="peer hidden" />
-  <a href="#top"><AlmaLogo class="peer-checked:hidden" /></a>
-  <label
-    class="absolute top-4 right-5 block p-1 peer-checked:hidden"
-    for="menustate"
-  >
+  <label class="block cursor-pointer p-1 peer-checked:hidden" for="menustate">
     <MenuIcon />
   </label>
   <label
