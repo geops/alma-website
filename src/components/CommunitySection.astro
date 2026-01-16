@@ -23,7 +23,7 @@ import PartnerGR from "./partners/gr.svg";
 import PartnerVD from "./partners/vd.svg";
 import PartnerNE from "./partners/ne.svg";
 import PartnerAG from "./partners/ag.svg";
-// import PartnerFL from "./partners/fl.svg";
+import PartnerFL from "./partners/fl.svg";
 import { useTranslations } from "../lib.ts";
 
 const partners = [
@@ -44,7 +44,7 @@ const partners = [
   ["VD", PartnerVD], // Waadt (Vaud)
   ["NE", PartnerNE], // Neuchâtel
   ["AG", PartnerAG], // Aargau
-  // ["FL", PartnerFL], // Fürstentum Liechtenstein
+  ["FL", PartnerFL], // Fürstentum Liechtenstein
 ] as const;
 
 const t = useTranslations(Astro.currentLocale);
